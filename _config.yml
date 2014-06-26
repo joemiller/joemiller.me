@@ -1,0 +1,70 @@
+title:            joemiller.me
+description:      A Blog
+# url:              http://localhost:4000
+#url:              http://joemiller.me
+# url:              http://new.joemiller.me
+# url:              http://joemiller.me.s3-website-us-east-1.amazonaws.com
+disqus_shortname: joemiller
+
+# Owner/author information
+owner:
+  name:           Joe Miller
+  avatar:         bio-photo.jpg
+  bio:            "Ops/Engineering. Continuous DevOping at Webscale"
+  email:          joeym@joeym.net
+  # Social networking links are used in author-bio sidebar. Update and remove as you like.
+  twitter:        miller_joe
+  facebook:
+  github:         joemiller
+  stackoverflow:
+  linkedin:
+  instagram:
+  lastfm:
+  tumblr:
+  pinterest:
+  foursquare:
+  steam:
+  dribbble:
+  # For Google Authorship https://plus.google.com/authorship
+  google_plus:
+
+# Analytics and webmaster tools stuff goes here
+google_analytics: UA-17214890-1
+google_verify:
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify:
+
+# Links to include in top navigation
+# For external links add external: true
+links:
+  - title: Blog
+    url: /posts/
+
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:    America/Los_Angeles
+future:      true
+highlighter: pygments
+markdown:    kramdown
+
+# https://github.com/mojombo/jekyll/wiki/Permalinks
+#permalink:   /:categories/:title/
+permalink:   /:year/:month/:day/:title/
+
+excerpt_separator: <!--more-->
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  use_coderay: false
+
+  coderay:
+    coderay_line_numbers:
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: class
+
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md", "scripts", "s3_website.yml", "*.key", "*.crt", 'NOTES-JOE.md', '.env']

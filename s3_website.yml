@@ -1,0 +1,46 @@
+s3_id: <%= ENV['AWS_KEY'] %>
+s3_secret: <%= ENV['AWS_SECRET'] %>
+s3_bucket: joemiller.me
+
+cloudfront_distribution_id: <%= ENV['CF_ID'] %>
+cloudfront_invalidate_root: true
+cloudfront_distribution_config:
+  default_cache_behavior:
+    min_TTL: <%= 60 * 60 * 24 %>
+  ### Setting multiple CNAMEs is not yet supported by the s3-website gem. Set them manually for now.
+  # aliases:
+  #   quantity: 2
+  #   items:
+  #       CNAME: joemiller.me
+  #       CNAME: www.joemiller.me
+  #       CNAME: new.joemiller.me
+
+concurrency_level: 20
+
+max_age:
+  "assets/*": 6000
+  "images/*": 6000
+  "*": 300
+
+# gzip:
+#   - .html
+#   - .css
+#   - .md
+# - .xml
+# gzip_zopfli: true
+
+# See http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region for valid endpoints
+# s3_endpoint: ap-northeast-1
+
+# redirects:
+#   index.php: /
+#   about.php: about.html
+#   music-files/promo.mp4: http://www.youtube.com/watch?v=dQw4w9WgXcQ
+
+# routing_rules:
+#   - condition:
+#       key_prefix_equals: blog/some_path
+#     redirect:
+#       host_name: blog.example.com
+#       replace_key_prefix_with: some_new_path/
+#       http_redirect_code: 301
