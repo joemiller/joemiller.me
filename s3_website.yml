@@ -1,12 +1,12 @@
 s3_id: <%= ENV['AWS_KEY'] %>
 s3_secret: <%= ENV['AWS_SECRET'] %>
-s3_bucket: joemiller.me
+s3_bucket: www.joemiller.me
 
-cloudfront_distribution_id: <%= ENV['CF_ID'] %>
-cloudfront_invalidate_root: true
-cloudfront_distribution_config:
-  default_cache_behavior:
-    min_TTL: <%= 60 * 60 * 24 %>
+# cloudfront_distribution_id: <%= ENV['CF_ID'] %>
+# cloudfront_invalidate_root: true
+# cloudfront_distribution_config:
+#   default_cache_behavior:
+#     min_TTL: <%= 60 * 60 * 24 %>
   ### Setting multiple CNAMEs is not yet supported by the s3-website gem. Set them manually for now.
   # aliases:
   #   quantity: 2
@@ -18,8 +18,8 @@ cloudfront_distribution_config:
 concurrency_level: 20
 
 max_age:
-  "assets/*": 6000
-  "images/*": 6000
+  "assets/*": 86400
+  "images/*": 86400
   "*": 300
 
 # gzip:

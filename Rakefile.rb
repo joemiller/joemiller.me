@@ -12,31 +12,31 @@ new_page_ext    = "md"  # default new page file extension when using the new_pag
 
 ## -- Tasks -- ##
 
-# usage rake serve
 desc "Run `jekyll serve` on localhost:4000"
 task :serve => [:grunt] do
   system("jekyll serve --watch")
 end
 
-# usage rake grunt
 desc "Run grunt"
 task :grunt do
   system('grunt')
 end
 
-# usage rake build
 desc "Run `jekyll build`"
 task :build do
   system("jekyll build")
 end
 
-# usage rake deploy
+desc "Apply/update S3 and Cloudfront configuration"
+task :apply do
+  system('s3_website cfg apply')
+end
+
 desc "Deploy to S3"
-task :deploy => [:grunt, :build] do
+task :deploy => [:grunt, :build, :apply] do
   system("s3_website push")
 end
 
-# usage rake new_post
 desc "Create a new post in #{posts_dir}"
 task :new_post, :title do |t, args|
   if args.title
@@ -68,7 +68,6 @@ task :new_post, :title do |t, args|
   end
 end
 
-# usage rake new_page
 desc "Create a new page"
 task :new_page, :title do |t, args|
   if args.title
