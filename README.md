@@ -94,22 +94,3 @@ Show all tasks and descriptions: `rake -T`
     rake new_page[title]  # Create a new page
     rake new_post[title]  # Create a new post in _posts
     rake serve            # Run `jekyll serve` on localhost:4000
-
-
-TODO
-----
-x better favicon
-x new repo
-- push to github repo
-x get invalidation working
-x get rake tasks for new_post, deploy
-- figure out cdn and dns
-x fix description/excerpts on all posts
-x securify config. ENV vars for S3 keys and cloudfront distro id. others?
-x fix articles with images. `egrep joemiller.*uploads _posts/*`
-
-### post dns switchover:
-
-x document s3/cdn config details since it's weird
-- confirm google analytics still working
-- confirm disqus comments are showing up
