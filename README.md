@@ -4,6 +4,11 @@ joemiller.me jekyll
 Hosting overview
 ----------------
 
+### S3
+
+- bucket 1:  joemiller.me     (empty, website-configuration set to: redir to www.joemiller.me)
+- bucket 2:  www.joemiller.me (content repo)
+
 ### DNS (Cloudflare)
 
 - joemiller.me     CNAME    joemiller.me.s3-website-us-east-1.amazonaws.com
@@ -12,11 +17,6 @@ Hosting overview
 ### CDN (Cloudflare)
 
 Configured to cache all content including html which is not the default on CF.
-
-### S3
-
-- bucket 1:  joemiller.me     (empty, website-configuration set to: redir to www.joemiller.me)
-- bucket 2:  www.joemiller.me (content repo)
 
 
 Install / Setup
